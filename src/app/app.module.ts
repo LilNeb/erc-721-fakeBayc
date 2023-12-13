@@ -7,9 +7,10 @@ import { ChainInfoComponent } from './chain-info/chain-info.component';
 import { ErrorComponent } from './error/error.component';
 import { FakeBaycComponent } from './fake-bayc/fake-bayc.component';
 import { FakeBaycDetailComponent } from './fake-bayc-detail/fake-bayc-detail.component';
+import { FakeNefturiansComponent } from './fake-nefturians/fake-nefturians.component';
 
 @NgModule({
-  declarations: [AppComponent, ChainInfoComponent, ErrorComponent, FakeBaycComponent, FakeBaycDetailComponent],
+  declarations: [AppComponent, ChainInfoComponent, ErrorComponent, FakeBaycComponent, FakeBaycDetailComponent, FakeNefturiansComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
