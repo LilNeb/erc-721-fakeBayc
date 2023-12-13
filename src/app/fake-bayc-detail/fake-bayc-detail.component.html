@@ -1,0 +1,12 @@
+<div *ngIf="tokenExists; else tokenError">
+  <h2>Token Details (ID: {{ tokenId }})</h2>
+  <p>Name: {{ tokenMetadata?.name }}</p>
+  <img [src]="convertIpfsUrl(tokenMetadata?.image)" alt="Token Image" />
+  <div *ngFor="let attribute of tokenMetadata?.attributes">
+    <p>{{ attribute.trait_type }}: {{ attribute.value }}</p>
+  </div>
+</div>
+
+<ng-template #tokenError>
+  <p>Error: Token does not exist.</p>
+</ng-template>
