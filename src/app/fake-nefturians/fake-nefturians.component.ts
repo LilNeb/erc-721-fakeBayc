@@ -32,10 +32,13 @@ export class FakeNefturiansComponent implements OnInit {
 
   async buyToken() {
     const accounts = await this.web3.eth.getAccounts();
+    const extraWei = '10000000000000'; // Adding a bit extra Wei
+    const purchasePrice = BigInt(this.minTokenPrice) + BigInt(extraWei);
+
     try {
       await this.contract.methods.buyAToken().send({
         from: accounts[0],
-        value: this.minTokenPrice,
+        value: purchasePrice.toString(),
       });
     } catch (error) {
       console.error('Error purchasing token:', error);

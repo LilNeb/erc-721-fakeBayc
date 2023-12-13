@@ -1,0 +1,10 @@
+<div *ngFor="let token of tokens">
+  <h3>{{ token.name }}</h3>
+  <img [src]="token.image" alt="{{ token.name }}" style="width: 150px" class="token-image" />
+  <p>{{ token.description }}</p>
+  <ul>
+    <li *ngFor="let attribute of token.attributes">
+      <strong>{{ attribute.trait_type }}:</strong> {{ attribute.value }}
+    </li>
+  </ul>
+</div>
